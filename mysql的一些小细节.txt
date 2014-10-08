@@ -1,0 +1,38 @@
+1、MyIsAm表的索引默认最大数量：64,当然可以通过重新编译来改变
+
+2、MyIsAm表的键默认最大长度：1000字节,当然可以通过重新编译来改变
+
+3、引擎选择：数据的大小，是一个影响你选择什么样存储引擎的重要因素，大尺寸的数据集趋向于选择InnoDB方式，因为其支持事务处理和故障恢复。数据库的在小 决定了故障恢复的时间长短，InnoDB可以利用事务日志进行数据恢复，这会比较快。而MyISAM可能会需要几个小时甚至几天来干这些事，InnoDB 只需要几分钟。
+
+4、区别总结
+  1.InnoDB不支持FULLTEXT类型的索引。
+  2.InnoDB 中不保存表的具体行数，也就是说，执行select count(*) from table时，InnoDB要扫   描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可。注意的是，当count(*)语句包含 where条件时，两种表   的操作是一样的。
+  3.对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起    建立联合索引。
+  4.DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。
+  5.LOAD TABLE FROM MASTER操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性（例如外键）的表不适用。
+  另外，InnoDB表的行锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表，例如update table    set num=1 where name like “%aaa%”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

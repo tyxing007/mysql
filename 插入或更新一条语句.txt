@@ -1,0 +1,1 @@
+$sql = "insert into `{$this -> _name}`(bookid,vote,updatetime) values({$bookid},1,'{$tm}') ON DUPLICATE KEY UPDATE vote=vote+1";

@@ -1,0 +1,6 @@
+SELECT  `idcardno` , COUNT(  `idcardno` ) AS count
+FROM  `yc_author_info` 
+GROUP BY  `idcardno` 
+HAVING COUNT(  `idcardno` ) >1
+ORDER BY count DESC 
+LIMIT 0 , 30

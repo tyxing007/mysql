@@ -1,0 +1,33 @@
+﻿一、系统原因：详情查看linux系统负载,此处略
+二、mysql自身
+1、max_connect_errors：
+	max_connect_errors默认值为10，如果受信帐号错误连接次数达到10则自动堵塞，需要flush hosts来解除。如果你得到象这样的一个		错误：
+	Host?'hostname'?is?blocked?because?of?many?connection?errors.
+	Unblock?with?'mysqladmin?flush-hosts'这意味着，mysqld已经得到了大量(max_connect_errors)的主机'hostname'的在中途被中断		了的连接请求。在max_connect_errors次失败请求后，mysqld认定出错了(象来字一个黑客的攻击)，并且阻止该站点进一步的连接，直		到某人	执行命令mysqladmin flush-hosts。
+	内网连接的话，建议设置在10000以上，已避免堵塞，并定期flush hosts。
+2、 connect_timeout
+	 默认值是5秒，在内网高并发环境中建议设置到10-15秒
+
+3、 skip-name-resolve
+
+4、 slave-net-timeout=seconds
+
+5、 master-connect-retry
+
+
+三、检查mysql 相关状态值
+  如果连接数达到了最大连接数，那不管 有多少资源，用户都会阻塞在外面。
+  查看最大连接数： mysql> show status like 'Max_used_connections';
+  
+  查看mysql进程：show full processlist;
+
+  关注慢查询日志：show variables like '%slow%';--查看慢查询日志是否开启，默认关闭
+
+  ANALYZE TABLE :本语句用于分析和存储表的关键字分布。
+  CHECK TABLE:检查一个或多个表是否有错误。
+
+
+
+
+
+

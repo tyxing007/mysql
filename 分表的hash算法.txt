@@ -1,0 +1,40 @@
+常用方法：
+  求莫(即取余数)
+   按表的记录数
+   hash算法(按一定规则，如分100张表，取用户uid最后三位数)
+   等等其他算法，自己想
+
+
+/*
+当数据量猛增的时候，大家都会选择库表散列等等方式去优化数据读写速度。笔者做了一个简单的尝试，1亿条数据，分100张表。具体实现过程如下。
+
+首先创建100张表：*/
+
+
+$table_name=get_hash_tables('code',56456456);
+echo $table_name;
+
+//下面两个函数是将两张表拆分到一百张表的hash算法
+function get_hash_tables($table,$code,$s=100)
+{
+	$hash = sprintf("%u", crc32($code));
+		//echo $hash;
+	$hash1 = intval(fmod($hash, $s));
+
+	return $table."_".$hash1;
+}
+
+function get_hash_table($table,$userid) 
+{
+	$str = crc32($userid);
+	if($str<0)
+	{
+		$hash = "0".substr(abs($str), 0, 1);
+	}else{
+		$hash = substr($str, 0, 2);
+	}
+
+	return $table."_".$hash;
+}
+
+

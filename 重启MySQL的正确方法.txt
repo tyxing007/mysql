@@ -1,0 +1,43 @@
+修改了my.cnf，需要重启MySQL服务
+由于是从源码包安装的Mysql，所以系统中是没有红帽常用的servcie mysqld restart这个脚本
+只好手工重启
+有人建议Killall mysql。这种野蛮的方法其实是不行的，强制终止的话，如果造成表损坏，损失是巨大的。
+这里推荐安全的重启方法
+$mysql_dir/bin/mysqladmin -u root -p shutdown
+$mysql_dir/bin/safe_mysqld & 
+mysqladmin和mysqld_safe位于Mysql安装目录的bin目录下，很容易找到的。
+
+windows下重启MySQL服务
+
+
+对于没装mysql图形管理端的用户来说启动和停止mysql服务：
+
+    …\…\bin>net   stop mysql
+
+    …\…\bin>net   start mysql
+
+如何启动/停止/重启MySQL
+
+发启动、停止、重启 MySQL 是每个拥有独立主机的站长必须要撑握的操作，下面为大家简单介绍一下操作方法：
+
+一、启动方式
+
+1、使用 service 启动：service mysqld start
+
+2、使用 mysqld 脚本启动：/etc/inint.d/mysqld start
+
+3、使用 safe_mysqld 启动：safe_mysqld&
+
+二、停止
+
+1、使用 service 启动：service mysqld stop
+
+2、使用 mysqld 脚本启动：/etc/inint.d/mysqld stop
+
+3、mysqladmin shutdown
+
+三、重启
+
+1、使用 service 启动：service mysqld restart
+
+2、使用 mysqld 脚本启动：/etc/inint.d/mysqld restart

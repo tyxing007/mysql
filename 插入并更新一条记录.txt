@@ -1,0 +1,7 @@
+使用该语法可在插入记录的时候先判断记录是否存在，如果不存在则插入，否则更新，很方便，无需执行两条SQL ,这儿同时更新主键索引
+
+insert into test(type,value) values(10003,32) ON DUPLICATE KEY UPDATE value =value+32
+或者
+insert into test(type,value) values(10003,32) ON DUPLICATE  value =value+32
+
+type字段必须是主键,主键不能重复

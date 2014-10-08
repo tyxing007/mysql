@@ -1,0 +1,107 @@
+1、主从复制的有点：
+	a、如果主服务器发生故障，则可以快速切换到从服务器提供服务
+	b、可以再从服务器上执行查询，降低服务器压力，主服务器一般担任写、更新、删除操作
+	c、可以在从服务器上做备份，避免影响主服务器性能   
+	   注意：一般只有更新不频繁或者对数据的实时性要求不高时，采用从服务器查询，实时性高的时间仍需从主服务器查询。
+	d、执行控制： 是从主服务器上执行sql还是从服务器执行sql，由php代码控制
+	   
+2、	主从服务器配置
+	主服务器：192.168.80.1
+	从服务器：192.168.80.2
+	主服务器授权给从服务器的用户：user01  密码：123456
+	a、登陆数据库：
+		mysql -h ip -u 登陆名 -p密码 -P 端口 数据库名
+	b、给从服务器设置授权用户
+	c、mysql日志文件所在位置：/usr/local/mysql/var
+	d、修改主数据库服务器的配置文件：my.cnf //my.cnf位置：/etc/my.cnf
+	    开启binglog日志，并设置server-id的值，即：
+			log-bin=mysql-bin
+			server-id=1
+			一般把前面的#去掉即可
+	e、在主服务器上设置读锁定有效，确保没有数据库操作，以便获得一致性快照(选做)
+	   mysql>flush tables with read lock;
+	f、目前备份主数据库服务器数据有两种方式：
+	   1、cp全部数据;
+	   2、mysqldump备份数据；
+	   如果主数据库服务可以停止操作(insert、update、delete),那么可以直接cp数据
+	   文件，速度应该是最快的生成快照。
+	   tar -cvf data.tar.data
+	   
+	g、解锁：unlock tables;
+	
+	h、一般最好采用mysqldump备份，不影响线上数据
+	  1、备份主服务器test数据库：
+	    root@localhost/  mysqldump -uroot -p123456 test > /tmp/test.sql
+	  2、将test.sql复制到从服务器(将主服务器的test.sql复制到从服务器的tmp目录下)
+	     scp /tmp/test.sql 192.168.80.2:/tmp/ --确认yes，输入从服务器密码
+	  3、恢复备份的文件(看上面的数据恢复)
+	  4、配置从服务器my.cnf文件(前提是：确保主服务器中已有授权给从服务器的用户,假设为：user01，密码：123456)
+		   server-id=2 --配置文件的此id不能重复，此页面有两个serverid，只开启第一个即可
+		   master-host     =   192.168.80.1 --主服务器ip
+		   master-user     =   user01 --主服务器授权给从服务器的用户名
+		   master-password =   123456 --授权用户(user01)密码
+		   master-port     =  3306  --主服务器数据库端口
+		   --测试一下能否从从服务器登陆到主服务器数据库(test)：
+		      mysql -uuser01 -h 192.168.80.1 -p123456 test;
+		   --查看mysql进程：ps -ef |grep mysqld
+		   --停止mysql进程：pkill mysqld
+		   --重启mysql：mysqld_safe  --user=mysql & 还有其它方式重启mysql
+		   --查看是否能自动同步:
+		   登陆从服务器数据库，执行：
+		       mysql> show slave status\G
+			 如果显示的结构中：
+			  Slave_10_Running:Yes
+			  show slave status\G
+			  这个字段同时是yes，则表示主从服务配置成功。一般60秒同步一次
+			--常用命令：
+			 mysql>: 
+			     start slave --启动复制线程
+				 stop slave --停止复制线程
+				 show slave status --查看从数据库状态
+				 show master logs --查看主数据库bin0log日志
+				 change master to --动态改变到主服务器的配置
+				 show processlist --查看从数据库运行进程
+			
+			--常见错误
+				a、如果从数据库无法同步：
+				   show slave status 显示 Slave_SQL_Running 为：NO,
+				   Seconds_Behind_Master为null时
+				   原因：
+				      1、程序可能在slave上进行了写操作
+					  2、也有可能是slave机器重启后，事务回滚造成的
+					  解决方法一(从数据库执行)：
+					    mysql>slave stop;
+						mysql>set GLOBAL SQL_SLAVE_SKIP_COUNTER=1;
+						mysql>slave start;
+					  解决方法二(主数据库执行)：
+					    msyql>slave stop;
+						mysql>show master status;--得到主服务器上当前的二进制日志名和偏移量
+						接着转移到从服务器数据库：
+						 手动执行同步
+						 mysql>change master to master_host='主数据库ip',
+								master_user='user01',
+								master_password='123457',
+								master_port=3306,
+								master_log_file='mysql-bin.000003',--要同步的文件
+								master_log_pos=98;
+								然后启动slave服务器：
+						 mysql>slave start;
+						 通过show slave status 查看
+							Slave_SQL_Running 为 Yes，	
+							Seconds_Behind_Master为0时，问题已经解决
+						
+================mysql用户授权=======================================================
+a、登陆数据库：
+		mysql -h ip -u 登陆名 -p密码 -P 端口 数据库名
+b、查看授权表及用户
+		select user,host,password from.user; //mysql数据库的user表
+		show grants for user01@192.168.80.2;//查看是否存在.2服务器上的用户
+		
+c、给从服务器用户授权(可以使该账号从从服务器登录到主服务器,在主服务器上添加如下账号)
+		--所有权限：
+		grant all on *.* to user01@192.168.1.102 identified by '123456';  --*.*:所有库及所有表 ,user01:用户名
+		--之后就可以从192.168.1.102登陆到主服务器
+		
+		--主从复制权限：
+		grant all slave on *.* to user01@192.168.1.102 identified by '123456'; 或者
+		grant replicatio slave on *.* user01@192.168.1.102 identified by '123456';

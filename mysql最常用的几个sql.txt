@@ -1,0 +1,35 @@
+SHOW CREATE TABLE employee; 显示表创建代码
+
+show databases;  显示所有数据库
+
+DESC employee;  显示表结构
+
+SHOW TABLES;  显示所有表
+
+DROP TABLE employee;  删除表
+
+TRUNCATE TABLE employee;  清空数据
+
+DELETE FROM employee;  删除所有数据
+
+
+CREATE TABLE new_employee SELECT * FROM employee;  复制表结构及内容
+
+
+CREATE TABLE new_employee LIKE employee;  复制表结构
+
+
+select * from table;
+insert into table(id,...) values(id,...);
+update table set name = 'test' where id = 12;
+delete from table where id = 88;
+
+CREATE TABLE  `table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `iemi` varchar(30) NOT NULL,
+  `num` char(11) NOT NULL,
+  `status` int(11) NOT NULL default '0',
+  PRIMARY KEY (`id`),
+  KEY `iemi` (`iemi`,`num`,`status`),
+  key `id` (`id`,`num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

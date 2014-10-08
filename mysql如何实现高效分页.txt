@@ -1,0 +1,24 @@
+先看一下分页的基本原理（我拿的是CSDN那个百万级数据库来测试！）：
+
+SELECT * FROM `csdn` ORDER BY id DESC LIMIT 100000,2000;
+耗时： 0.813ms
+
+分析：对上面的mysql语句说明：limit 100000,2000的意思扫描满足条件的102000行，扔掉前面的100000行，返回最后的2000行。
+
+问题就在这里，如果是limit 100000,20000，需要扫描120000行，在一个高并发的应用里，每次查询需要扫描超过100000行，性能肯定大打折扣。
+
+在《efficient pagination using mysql》中提出的clue方式。
+
+利用clue方法，给翻页提供一些线索，比如还是SELECT * FROM `csdn` order by id desc，按id降序分页，每页2000条，当前是第50页，当前页条目id最大的是102000，最小的是100000。如果我们只提供上一页、下一页这样的跳转（不提供到第N页的跳转）。
+
+那么在处理上一页的时候SQL语句可以是：
+SELECT * FROM `csdn` WHERE id<=102000 ORDER BY id DESC LIMIT 2000; #上一页
+耗时：0.015ms
+
+处理下一页的时候SQL语句可以是：
+SELECT * FROM `csdn` WHERE id>102000 ORDER BY id ASC LIMIT 2000; #下一页
+耗时：0.015ms
+
+这样，不管翻多少页，每次查询只扫描20行。效率大大提高了！
+
+但是，这样分页的缺点是只能提供上一页、下一页的链接形式。

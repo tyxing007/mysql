@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>你知道 facebook,sina,sohu都用的啥数据库吗？不知道的话请看本文章！（35个非主流的数据库） - kk5595的专栏 - 博客频道 - CSDN.NET</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="&#160;35个非主流开源数据库 你知道吗？【IT168 评论】几乎每个Web开发人员都有自己喜欢的数据库，或自己最熟悉的数据库，但最常见的无外乎以下几种：　　MySQL　　PostgreSQL　　MSSQL　　SQLite　　MS Access　　或是更简单的XML，文本文件等。这些数据库有优秀的文档，背后有强大的社区支持，大部分流行的CMS都使用了其中之一或多个，它们都易于使用，大多数托管服务供应商都" />
+<script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+<script src="http://static.blog.csdn.net/scripts/plugins.js" type="text/javascript"></script>
+<script src="http://static.blog.csdn.net/scripts/common.js?v=1.2" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+<link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/light_blue/css/style.css?v=1.1" />
+<link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/kk5595/rss/list" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+</head>
+<body>
+<script src="http://csdnimg.cn/pubnav/js/pub_topnav_2011.js"type="text/javascript"></script>
+<div id="container">
+<div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h1><a href="/kk5595">kk5595的专栏</a></h1>
+            <h2>昂首阔步，不留一点遗憾</h2>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg"></div>
+    <div class="navigator">
+        <ul>
+            <li id="btnContents"><a href="/kk5595?viewmode=contents"><span><img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+            <li id="btnView"><a href="/kk5595?viewmode=list"><span><img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+            <li id="btnRss"><a href="/kk5595/rss/list"><span><img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>
+</ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "kk5595";
+    var blog_address = "http://blog.csdn.net/kk5595";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";
+</script>
+        
+<div id="body">
+<div id="main">
+<div class="main">
+<div class="notice"> 
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/8206587" target="_blank">
+<font color=red>
+公告：CSDN 搜索第二版正式上线！  </font></a>
+
+&nbsp;&nbsp;
+
+
+<a href="http://hbtc2012.hadooper.cn/"target="_blank">
+<font color=red> Hadoop与大数据精彩议题发布</font></a>
+
+&nbsp;&nbsp;&nbsp;
+
+
+<a href="http://blog.csdn.net/zhangoi391/article/details/8161343"target="_blank">
+<font color=red>2000元大奖征异构开发博文  </font></a>
+
+<br />
+
+
+
+
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/8140597"target="_blank">
+<font color=red>CSDN博客频道搬家功能改版正式上线！ </font></a>
+
+&nbsp;&nbsp;
+
+<a href="http://events.csdn.net/DR2012/roadshow/index.html"target="_blank">
+<font color=red>【免费】解读海外市场营销奥秘   </font></a>
+
+&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/8101993"target="_blank">
+<font color=red>CSDN博客频道推出TAG功能  </font></a>
+
+</div><div id="article_details" class="details">
+    <div class="article_title">
+    <span class="ico ico_type_Original"></span>
+    <h3>
+        <span class="link_title"><a href="/kk5595/article/details/6115950">
+        你知道 facebook,sina,sohu都用的啥数据库吗？不知道的话请看本文章！（35个非主流的数据库）
+        </a></span>
+    </h3>
+</div>
+
+        
+    <div class="article_manage">
+    <span class="link_postdate">2011-01-04 17:02</span>
+    <span class="link_view" title="阅读次数">2629人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('你知道 facebook,sina,sohu都用的啥数据库吗？不知道的话请看本文章！（35个非主流的数据库）','6115950');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:report(6115950,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+
+    
+<div id="article_content" class="article_content">
+<p>&nbsp;</p>
+<!--  分类-->
+	
+<!--  content 1-->
+<div class="Content">
+<!--  left -->
+<div class="l2">
+<form id="urlFrm" style="display: none;" method="get"></form>
+<div id="divframe" style="display: none; position: absolute;" onmousemove="show(this)" onmouseout="hide(this)">
+<a href="http://trust.acer.com.cn/" target="_blank"><img id="imgbigpic" src="http://tech.it168.com/detailinclude/Acerads.jpg" alt="" width="180" height="100" />
+</a>
+</div>
+<div class="bor1 mt8">
+<div class="t1">
+<h1>35个非主流开源数据库 你知道吗？</h1>
+</div>
+<!-- wordstart-->
+<div id="detailWord" class="word">
+<p>　　<strong>【IT168 评论】</strong>
+几乎每个Web开发人员都有自己喜欢的数据库，或自己最熟悉的数据库，但最常见的无外乎以下几种：</p>
+<p>　
+　MySQL</p>
+<p>　　PostgreSQL</p>
+<p>　　MSSQL</p>
+<p>　　SQLite</p>
+<p>　　MS Access</p>
+<p>　
+　或是更简单的XML，文本文件等。这些数据库有优秀的文档，背后有强大的社区支持，大部分流行的CMS都使用了其中之一或多个，它们都易于使用，大多数
+托管服务供应商都提供了相应的产品，因此它们的使用量很多，名气也很大。但除了这些主流的数据库外，还有很多其它非主流数据库存在，其中有一些也开始受到
+人们的高度重视，下面我们就一起来看看吧，注意本文只介绍开源数据库，说不定在下一个项目中，你就有尝试它们的冲动。</p>
+<p>　　<strong>1、
+MongoDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/67060ae01eeae330.jpg" border="1" alt="35个非主流开源数据库介绍" />
+</p>
+<p>　　MongoDB是一款开源，高性能，可扩展，无模式，面向文档(与JSON类似的数据模式)的数据库，它为时下
+最流行的编程语言提供了驱动，如PHP，Python，Perl，Ruby，JavaScript，C++等，支持全文索引，自动分片，跨LAN或WAN
+扩展，采用Key/Value方式存储数据。MongoDB服务端可运行在Linux、Windows或OS 
+X平台，支持32位和64位应用。世界上最大的单词收录网站Wordnik就从MySQL转向了MongoDB。</p>
+<p>　　<strong>2、
+Hypertable</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/57697c68cb16c42e.jpg" border="1" alt="35个非主流开源数据库介绍" />
+</p>
+<p>　　Hypertable是一款高性能分布式数据存储系统，旨在为应用程序提供最好的性能，可扩展性和可靠性，它建
+立在Google的BigTable之上，主要面向大规模数据集应用，其目标是要成为世界上最好的大规模并发高性能数据库平台。百度目前也使用了
+Hypertable，也是它的赞助商。</p>
+<p>　　<strong>3、Apache CouchDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/e15611381b5410f4.jpg" border="1" alt="35个非主流开源数据库介绍" />
+</p>
+<p>　　Apache 
+CouchDB是一款面向文档的数据库，可以使用JavaScript通过MapReduce方法进行查询和索引，它提供了一个RESTful JSON
+ 
+API，因此可以在任何环境中通过HTTP访问，CouchDB内置了Web管理控制台，支持通过浏览器管理数据库。CouchDB使用Erlang编
+写，Erlang是一种健壮的函数式编程语言，非常适合于构建并发的分布式系统，Erlang的设计非常灵活，其可伸缩性与可扩展性都非常棒。</p>
+<br />
+<p>　
+　<strong>4、Neo4j</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/f9e54fb84c4bfb4c.jpg" border="1" alt="Neo4j" />
+</p>
+<p>　　Neo4j是一个嵌入式，基于磁盘的，支持完整事务的Java持久化引擎，它在图像中而不是表中存储数据。
+Neo4j提供了大规模可扩展性，在一台机器上可以处理数十亿节点/关系/属性的图像，可以扩展到多台机器并行运行。相对于关系数据库来说，图形数据库善
+于处理大量复杂、互连接、低结构化的数据，这些数据变化迅速，需要频繁的查询&mdash;&mdash;在关系数据库中，这些查询会导致大量的表连接，因此会产生性能上的问题。
+Neo4j重点解决了拥有大量连接的传统RDBMS在查询时出现的性能衰退问题。通过围绕图形进行数据建模，Neo4j会以相同的速度遍历节点与边，其遍
+历速度与构成图形的数据量没有任何关系。此外，Neo4j还提供了非常快的图形算法、推荐系统和OLAP风格的分析，而这一切在目前的RDBMS系统中都
+是无法实现的。</p>
+<p><strong>　　5、Riak</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/f18f1661f60d252f.jpg" border="1" alt="Neo4j" />
+</p>
+<p>　　Riak是一款非常适合于Web应用程序的数据库，它提供了去中心化的Key/Value存储，灵活的map
+/reduce引擎和友好的HTTP/JSON查询接口。它是一个真正的容错系统，不会出现单点故障，在Riak世界中，没有哪台机器是特殊的或属核心<a class="nounderline" title="服务器" href="http://product.it168.com/list/b/0402_1.shtml" target="_blank" title="服务器" class="nounderline">服务器</a>
+，它们都是对等的。</p>
+<p>　　<strong>6、Oracle 
+Berkeley DB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/daca8c9df7fe3f.jpg" border="1" alt="Neo4j" />
+</p>
+<p>　　Oracle Berkeley 
+DB是一系列开源的嵌入式数据库，使开发人员能够将一个快速、可伸缩、具有工业级别的可靠性和可用性的事务处理数据库引擎结合进他们的应用程序中。
+Berkeley DB最先由伯克利加州大学为了移除受到AT&amp;T限制的程式码，从BSD 4.3到4.4时所改写的软件。Berkeley 
+DB运行在大多数的<a class="nounderline" title="操作系统" href="http://product.it168.com/list/b/0501_1.shtml" target="_blank" title="操作系统" class="nounderline">操作系统</a>
+中，例如大多数的UNIX系统，
+ 和windows系统，以及实时<a class="nounderline" title="操作系统" href="http://product.pcpop.com/Operating_System/00000_1.html" target="_blank" title="操作系统" class="nounderline">操作系统</a>
+。</p>
+<p>　<strong>　7、
+Apache Cassandra</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/968581a8d08482bb.jpg" border="1" alt="Neo4j" />
+</p>
+<p>　　Cassandra是一款高可扩展性第二代分布式数据库，属于混合型的非关系的数据库，类似于Google的
+BigTable，支持的数据结构非常松散，类似于JSON的BJSON格式，因此可以存储比较复杂的数据类型。Cassandra最初由
+Facebook开发，后转变成了开源项目。Cassandra的主要特点就是它不是一个数据库，而是由一堆数据库节点共同构成的一个分布式网络服务，对
+Cassandra 
+的一个写操作，会被复制到其他节点上去，对Cassandra的读操作，也会被路由到某个节点上面去读取。对于一个Cassandra群集来说，扩展性能
+是比较简单的事情，只管在群集里面添加节点就可以了。Facebook，Digg，Twitter和Cisco等大型网站都使用了Cassandra。</p>
+<br />
+<p>　
+　<strong>8、Memcached</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/1fb764cb257e5eb9.jpg" border="1" alt="Memcached" />
+</p>
+<p>　　Memcached是开源的分布式cache系统，现在很多的大型web应用程序包括
+facebook，youtube，wikipedia，yahoo等等都在使用memcached来支持他们每天数亿级的页面访问。通过把cache层
+与他们的web架构集成，他们的应用程序在提高了性能的同时，还大大降低了数据库的负载。</p>
+<p>　　Memcached处理的原子是每一个
+key/value对，key会通过一个hash算法转化成hash-key，便于查找、对比以及做到尽可能的散列。同时，memcached用的是一个
+二级散列，通过一张大hash表来维护。</p>
+<p>　<strong>　9、Firebird</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/a31f58e218561570.jpg" border="1" alt="Memcached" />
+</p>
+<p>　　Firebird是一个关系数据库，可以运行在Linux，Windows和各种Unix平台
+上，Firebird相对MySQL和PostgreSQL来说比较小，这也使其可以称得上是理想的嵌入式数据库，可用于与其它应用程序<a class="nounderline" title="服务器" href="http://product.pcpop.com/Server/00000_1.html" target="_blank" title="服务器" class="nounderline">服务器</a>
+和应用程序捆绑。Firebird具有大部分成熟数据库所具有的功能，
+比如支持存储过程、SQL兼容等。</p>
+<p>　　<strong>10、Redis</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/1c001cfa9df8385c.jpg" border="1" alt="Memcached" />
+</p>
+<p>　　Redis是一款快速的Key/Value数据库引擎，它在保持键值数据库简单快捷特点的同时，又吸收了部分关
+系数据库的优点，从而使它的位置处于关系数据库和键值数据库之间。Redis不仅能保存Strings类型的数据，还能保存Lists类型(有序)和
+Sets类型(无序)的数据，而且还能完成排序(SORT)等高级功能，在实现INCR，SETNX等功能的时候，保证了其操作的原子性，除此以外，还支
+持主从复制等功能。Redis使用C语言编写，可以想memcached那样使用，放在传统数据库的前端，它支持许多编程语言，受到许多流行的项目使用，
+如GitHub和Engine Yard，有一个用PHP编写的客户端叫做Rediska，专门来管理Redis数据库。</p>
+<p>　　<strong>11、
+HBase</strong>
+</p>
+<p>　　HBase是一个分布式，面向列存储的数据库引擎，也可以叫做Hadoop数据库，因为它是Hadoop的子项
+目，HBase的目标是托管数十亿行，数百万列的大表，它提供了一个REST风格的Web服务器<a class="nounderline" title="网关" href="http://product.it168.com/list/b/0474_1.shtml" target="_blank" title="网关" class="nounderline">网关</a>
+，支持XML，Protobuf和二进制数据编码选项。</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/3821dac2afa5a39e.jpg" border="1" alt="Memcached" />
+</p>
+<p>&nbsp;</p>
+<br />
+<p>　　<strong>12、Keyspace</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/f47ce5f6a987a45d.jpg" border="1" alt="Keyspace" />
+</p>
+<p>　　Keyspace 是一家叫做 Scalien 的创业公司开发的高可靠 key/value 
+存储系统，Keyspace 强调的技术点是高可靠性，有以下一些特点：</p>
+<p>　　Key/Value存储：一个 key/value 
+数据存储系统，只支持一些基本操作，如：SET(key, value) 和 GET(key) 等;</p>
+<p>　　分布式：多台机器(nodes)
+同时存储数据和状态，彼此交换消息来保持数据一致，可视为一个完整的存储系统。为了更可靠，Keyspace 推荐使用奇数个 
+nodes，比如：3，5，7等;</p>
+<p>　　数据一致：所有机器上的数据都是同步更新的、不用担心得到不一致的结果，Keyspace 
+使用著名的 Paxos 分布式算法;</p>
+<p>　　冗余：所有机器(nodes)保存相同的数据，整个系统的存储能力取决于单台机器(node)的
+能力;</p>
+<p>　　容错：如果有少数 nodes 出错，比如重启、当机、断网、网络丢包等各种 fault/fail 都不影响整个系统的运行;</p>
+<p>　
+　高可靠性：容错、冗余等保证了 Keyspace 的可靠性。</p>
+<p>　<strong>　13、4store</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/a840bcf98658beba.jpg" border="1" alt="Keyspace" />
+</p>
+<p>　　4store是一个容纳RDF数据的数据库存储和查询引擎，它使用ANSI 
+C99编写，可在类Unix系统上运行，提供一个高性能，可扩展和稳定的平台。4store专门为无共享集群进行优化，最大可支持32节点集群，导入性能
+最大可以达到120kT/s，它的查询性能也相当出众。</p>
+<p>　　<strong>14、MariaDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/686b90eceaa17fff.jpg" border="1" alt="Keyspace" />
+</p>
+<p>　　MariaDB是一个向后兼容的，旨在替换MySQL数据库的MySQL分支，它包括所有主要的开源存储引擎，
+另外也开发了属于自己的Maria存储引擎。MariaDB是由原来 MySQL 的作者 Michael Widenius 
+创办的公司所开发的免费开源数据库服务器，与 MySQL 相比较，MariaDB 更强的地方在于：</p>
+<p>　　Maria 存储引擎</p>
+<p>　
+　PBXT 存储引擎</p>
+<p>　　XtraDB 存储引擎</p>
+<p>　　FederatedX 存储引擎</p>
+<p>　　更快的复制查询处理</p>
+<p>　
+　线程池</p>
+<p>　　更少的警告和bug</p>
+<p>　　运行速度更快</p>
+<p>　　更多的 Extensions (More index
+ parts, new startup options etc)</p>
+<p>　　更好的功能测试</p>
+<p>　　数据表消除</p>
+<p>　　慢
+查询日志的扩展统计</p>
+<p>　　支持对 Unicode 的排序</p>
+<br />
+<p>　　<strong>15、Drizzle</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/f0daa1110cfc2b98.jpg" border="1" alt="Drizzle" />
+</p>
+<p>　　Drizzle是从MySQL衍生出来的一个数据库，但它的目的不是要取代MySQL，它的宗旨是构建一个&ldquo;更
+精练、更轻量、更快速&rdquo;的MySQL版本，它的扩展性和易用性与MySQL相当，但为了提高性能和扩展性，它从原来的核心系统里移除了部分功能。
+Drizzle是一种为云和网络程序进行了特别优化的数据库，它是为在现代多<a class="nounderline" title="CPU" href="http://product.it168.com/list/b/0217_1.shtml" target="_blank" title="CPU" class="nounderline">CPU</a>
+/多核架构上实现大规模并发而设计的。</p>
+<p>　<strong>　16、
+HyperSQL</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/b78fb65d19440eea.jpg" border="1" alt="Drizzle" />
+</p>
+<p>　　HyperSQL是用Java编写的一款SQL关系数据库引擎，它的核心完全是多线程的，支持双向锁和
+MVCC(多版本并发控制)，几乎完整支持ANSI-92 
+SQL，支持常见数据类型，最新版本增加了对BLOB和CLOB数据的支持，最高支持达64T的数据量。同时，HyperSQL也是一个不错的嵌入式数据
+库。</p>
+<p>　　<strong>17、MonetDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/1c7e6e91d3ecc705.jpg" border="1" alt="Drizzle" />
+</p>
+<p>　　MonetDB是一个高性能数据库引擎，主要用在数据挖掘，OLAP，GIS，XML 
+Query，文本和多媒体检索等领域。MonetDB对DBMS的各个层都进行创新设计，如基于垂直分片的存储层，为现代<a class="nounderline" title="CPU" href="http://product.pcpop.com/CPU/00000_1.html" target="_blank" title="CPU" class="nounderline">CPU</a>
+优化的查询执行架构，自动和自助调整索引，运行时查询优化，以及模块化
+的软件架构。MonetDB/SQL是MonetDB提供的关系数据库解决方案，MonetDB/XQuery是XML数据库解决方案，MonetDB 
+Server是MonetDB的多模型数据库服务器。</p>
+<p>　　<strong>18、Persevere</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/60a281479874589f.jpg" border="1" alt="Drizzle" />
+</p>
+<p>　　Persevere 
+是针对Javascript设计的基于REST的JSON数据库，分布式计算，持久对象映射的框架，提供独立的web服务器，主要用于设计富客户端应用，
+可以用在任何框架和客户端上。Persevere 
+Server是一个基于Java/Rhino的对象存储引擎，在交互式的客户端JavaScript环境中提供持久性的JSON数据格式。</p>
+<p>　
+　<strong>19、eXist-db</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/2df1d5b2ddd34e32.jpg" border="1" alt="Drizzle" />
+</p>
+<p>　　eXist-db是使用XML技术构建的数据库存储引擎，它根据XML数据模型存储XML数据，提供高效的，基
+于索引的XQuery查询。eXist-db支持许多Web技术标准，使得它非常适合Web应用程序开发：</p>
+<p>　　 XQuery 1.0 /
+ XPath 2.0 / XSLT 1.0 (使用pache Xalan)或XSLT 2.0</p>
+<p>　　 
+HTTP接口：REST，WebDAV，SOAP，XMLRPC，Atom发布协议</p>
+<p>　　 
+XML数据库规范：XMLDB，Xupdate，XQuery更新扩展</p>
+<p>　　最新的1.4版本还增加了基于Apache 
+Lucene的全文索引，轻量级URL重写和MVC框架，以及对XProc的支持。eXist-db与XQuery标准高度兼容(目前XQTS的得分是
+99.4%)。</p>
+<br />
+<p>　　<strong>20、Gladius</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/c5f7a112e35f49b7.jpg" border="1" alt="Gladius" />
+</p>
+<p>　　Gladius是用纯PHP编写的平面文件数据库引擎，它的SQL语法与SQL92的一个子集兼容，它捆绑了一
+个轻量级的adoDB驱动。</p>
+<p>　　<strong>21、CloudStore</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/904884979ed22bf6.jpg" border="1" alt="Gladius" />
+</p>
+<p>　　CloudStore(以前叫做Kosmos文件系统)是一个开源的高性能分布式文件系统，它是用C++编写
+的，CloudStore可以和Hadoop以及Hypertable集成，这样就允许应用程序构建在那些系统上，而底层数据存储无缝地使用
+CloudStore。CloudStore支持Linux和Solaris，主要用来存储Web日志和Web爬行数据。</p>
+<p>　　22、
+OpenQM</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/ae158326459fd2df.jpg" border="1" alt="Gladius" />
+</p>
+<p>　　OpenQM是唯一一款同时有商业支持和免费的开源多值数据库，基于GPL协议发布，多值数据库对NoSQL运
+动起到了推动作用，它自身也因速度快，体积小，比关系数据库便宜而很快得到了认可。名称OpenQM中的Open表示开源版本，QM表示商业闭源QM数据
+库。商业版本支持Windows，Linux(RedHat，Fedora，Debian，Ubuntu)，FreeBSD，Mac OS 
+X和Windows 
+Mobile，其列表价格还不到其它多值产品的1/5，商业版本还包括一个GUI管理界面和终端模拟器，开源版本仅包括核心多值数据库引擎，主要是为开发
+人员准备的。</p>
+<p>　　<strong>23、ScarletDME</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/aed6cf213a3d2fa.jpg" border="1" alt="Gladius" />
+</p>
+<p>　　ScarletDME也是一个开源多值数据库，它是OpenQM的社区分支版，最初由Ladybridge开
+发，这个项目创立于2008年11月28日，它既在独立开发自己的功能，也在为OpenQM贡献代码。这个项目最初的名字叫做Ladybridges 
+GPL OpenQM，现在正式改为ScarletDME，其中的DME是Data Management 
+Environment(数据管理环境)的首字母缩写。</p>
+<p>　<strong>　24、SmallSQL</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/edea8abba4609aca.jpg" border="1" alt="Gladius" />
+&nbsp;</p>
+<p>　　SmallSQL是一个100%纯Java编写的轻量级数据库，一般用于嵌入式领域，兼容SQL 
+99标准，支持JDBC 3.0 
+API，定位于高端Java桌面SQL数据库。支持所有能运行Java的平台，可直接嵌入到应用程序中。不过它也有一些不足，如没有网络接口，必须安装
+Java运行时，同一时间不能在多个应用程序之间共享数据库，没有用户管理。</p>
+<br />
+<p>　<strong>　25、LucidDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/273a140cd79440f4.jpg" border="1" alt="LucidDB" />
+&nbsp;</p>
+<p>　　LucidDB是唯一一款专注于数据仓库和商务智能的开源RDBMS，它使用了列存储架构，支持位图索引，哈
+希连接/聚合和页面级多版本，大部分数据库最初都注重事务处理能力，而分析功能都是后来才加上去的。相反，LucidDB中的所有组件从一开始就是为满足
+灵活的需求，高性能数据集成和大规模数据查询而设计的，此外，其架构设计彻底从用户出发，操作简单，完全无需DBA。</p>
+<p>　　LucidDB对
+硬件要求也极低，即使不搭建集群环境，在单一的Linux或Windows服务器上也能获得极好的性能。最新版本还加入了对Mac OS 
+X和Windows 64位的支持，官方网站上的文档和教程也非常丰富，非常值得你体验一下。</p>
+<p>　　<strong>26、HyperGraphDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/7f3ee6de8780af05.jpg" border="1" alt="LucidDB" />
+&nbsp;</p>
+<p>　　HyperGraphDB是一种通用的，可扩展的，可移植的，分布式，嵌入式和开源数据存储机制，它是一个图
+形数据库，专门为人工智能和语义Web项目而设计，它也可用于任意规模的嵌入式面向对象的数据库。正如其名，HyperGraphDB是用来存储超图的，
+但它也属于一般图形数据库家族，作为一个图形数据库，它不施加任何限制，相比其他图形数据库它的功能更丰富。</p>
+<p>　　HyperGraphDB
+非常稳定，已经应用在多个生产环境，包括一个搜索引擎和Seco scripting IDE。它支持*nix和Windows平台，需要Java 
+5+。</p>
+<p>　　<strong>27、InfoGrid</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/9c35a779e5609dd9.jpg" border="1" alt="LucidDB" />
+&nbsp;</p>
+<p>　　InfoGrid是一个互联网图形数据库，它提供了许多额外的组件，使得在图像基础上开发RESTful 
+Web应用程序变得更加容易。InfoGrid是开源的，包括一系列项目：</p>
+<p>　　InfoGrid图形数据库项目 &ndash; 
+InfoGrid的心脏GraphDatabase，可以独立使用，也可以附加到其它InfoGrid项目。</p>
+<p>　　InfoGrid图形数据
+库网格项目 &ndash; 
+在GraphDatabase基础上增加了复制协议，因此多个分布式GraphDatabase就可以在一个非常大的图像管理环境中协作。</p>
+<p>　
+　InfoGrid存储项目 &ndash;象SQL数据库和分布式NoSQL哈希表那样，为存储技术提供一个抽象的通用接口，这样InfoGrid 
+GraphDatabase就可以使用任何存储技术持久化数据。</p>
+<p>　　InfoGrid用户接口项目 &ndash; 
+将GraphDatabase中的内容以REST风格映射成浏览器可访问的URL。</p>
+<p>　　InfoGrid轻量级身份识别项目 &ndash; 
+实现以用户为中心的身份识别技术，如LID和OpenID。</p>
+<p>　　InfoGrid模型库项目 &ndash; 
+定义一个可复用对象模型库，作为InfoGrid应用程序的模式使用。</p>
+<p>　　InfoGrid Probe项目 &ndash; 
+实现Probe框架，它允许开发人员将任何互联网上的数据源当作一个图像对象看待。</p>
+<p>　　InfoGrid Utilities项目 &ndash; 
+收集InfoGrid使用的常见对象框架和实用代码。</p>
+<br />
+<p>　<strong>　28、Apache Derby</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/1c1184ac8d5b3a3b.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　Apache Derby是Apache 
+DB的子项目，它完全用Java编写，是一个开源关系数据库，它的体积非常小，基础引擎加上JDBC驱动只有2.6MB，它支持SQL标准，它提供了一个
+嵌入式JDBC驱动，因此可以嵌入到任何基于Java的应用程序中，Derby也支持常见的客户端/服务器模式，它也易于安装和使用。</p>
+<p>　　<strong>29、
+hamsterdb</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/94a42e91c5315a4.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　Hamsterdb是一个轻量级嵌入式NoSQL 
+Key/Value存储引擎，它已经有5年历史，现在它的开发重点放在易用性，高性能，稳定性和可扩展性上。Hamsterdb支持事务(同一时间只能处
+理一个事务)，支持<a class="nounderline" title="内存" href="http://product.it168.com/list/b/0205_1.shtml" target="_blank" title="内存" class="nounderline">内存</a>
+数据库，支持基于HTTP服务器的嵌入式
+远程数据库，支持日志/恢复，AES加密，基于zlib的压缩，支持C++，Python，.NET和Java编程语言。</p>
+<p>　　<strong>30、
+H2 Database</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/7408cbacd90c682c.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　H2 Database是一个开源的Java数据库，它的速度很快，包括JDBC 
+API，支持嵌入式和服务器模式，<a class="nounderline" title="内存" href="http://product.pcpop.com/Memory/00000_1.html" target="_blank" title="内存" class="nounderline">内存</a>
+数据库，提供了一个基于浏览器的控制台程
+序，它的体积也非常小，只有一个大小约1MB的jar文件，它还支持ODBC驱动和全文搜索。</p>
+<p>　　<strong>31、EyeDB</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/eae851ca02d45911.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　EyeDB是一款基于ODMG 
+3规范的面向对象数据库管理系统，为C++和Java提供了编程接口，它功能非常强大，并且成熟，稳定和安全，实际上，它起源于1992年的Genome
+ View项目，1994年又进行了重写，广泛用于生物信息项目。</p>
+<p>　　<strong>32、txtSQL</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/a722a3cbd31b53df.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　txtSQL是一个面向对象的平面文件数据库管理系统，它使用PHP编写，支持对普通文本文件的操作，虽然是一
+个文本数据库，但同样支持SQL的一个子集，并且执行效率非常高，txtSQL使用文件系统的方法与MySQL的表和数据库原理类似，它有一个类似于
+phpMyAdmin管理界面。</p>
+<p><strong>　　33、db4o</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/6d250cfae20ef16c.jpg" border="1" alt="Apache Derby" />
+</p>
+<p>　　db4o是一个面向对象的开源数据库，允许Java和.NET开发人员用一行代码存储和检索任何应用程序对象，
+无需预定义或维护一个独立的，僵化的数据模型，因为模型现在是由db4o根据需要自动创建和更新的。db4o成功的秘密是因为它的易用性，它原生为
+Java和.NET设计，存储数据对象的方法直接在应用程序中定义，因此db4o很容易集成到应用程序中，由于只需要一行代码，因此执行效率非常高。</p>
+<br />
+<p>　
+　<strong>34、Tokyo Cabinet</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/cd6f999dc5007b3.jpg" border="1" alt="Tokyo Cabinet" />
+&nbsp;</p>
+<p>　　Tokyo 
+Cabinet是一个Kay/Value型数据库，每个Key和Value的长度都可以不同，Kay和Value既可以是二进制数据，也可以是字符串，无
+数据表和数据类型的概念，记录是以哈希表、B+树和固定长度数组形式组织的。Tokyo Cabinet具有以下优点：</p>
+<p>　　空间利用率高 &ndash;
+ 数据文件尺寸更小;</p>
+<p>　　执行效率高 &ndash; 更快的处理速度;</p>
+<p>　　并发性能好 &ndash; 在多线程环境性能更好;</p>
+<p>　　
+改善的可用性 &ndash; 简化的API;</p>
+<p>　　改善的可靠性 &ndash; 即使在发生灾难的情况下，数据文件也不会损坏;</p>
+<p>　　支持64位架构
+ &ndash; 支持海量的存储空间和巨型数据库文件。</p>
+<p>　　Tokyo 
+Cabinet是用C语言编写的，为C，Perl，Ruby，Java和Lua提供了API。</p>
+<p>　<strong>　35、Voldemort项目</strong>
+</p>
+<p style="text-align: center;"><img onclick="loc(this);" src="http://image20.it168.com/201008_0x0/168/e6b32b92f634d64b.jpg" border="1" alt="Tokyo Cabinet" />
+</p>
+<p>　　Voldemort是一个分布式Key/Value存储系统，它具有以下特点：</p>
+<p>　　数据自动在多
+个服务器之间复制;</p>
+<p>　　数据自动分区，因此每个服务器只包括整体数据的一个子集;</p>
+<p>　　服务器故障处理是透明的;</p>
+<p>　
+　支持插入式序列化，允许丰富的Key和Value类型，包括列表和元组，也可以集成常见的序列化框架，如Protocol 
+Buffers，Thrift，Avro和Java Serialization</p>
+<p>　　数据项支持版本化，即使在故障情况下，数据完整性也可
+以得到保障;</p>
+<p>　　每个节点都是独立的，无需其他节点协调，因此也没有中央节点;</p>
+<p>　　单节点性能优秀：根据机器配置、网络、磁
+盘系统和数据复制因素的不同，每秒可以执行10-20k操作;</p>
+<p>　　支持地理分散式部署。</p>
+<p>　　LinkedIn目前就使用
+Voldemort解决了高可伸缩性存储问题。</p>
+<p>　　不知道你是否一口气看完本文，我想你也一定会惊讶于这么多开源数据库吧，事实上，本文也
+尚未完全罗列，欢迎你的补充。</p>
+<p>　　原文出处：<a href="http://phpcamp.net/toolbar/25-alternative-open-source-database-engines">http://phpcamp.net/toolbar/25-alternative-open-source-database-engines</a>
+</p>
+<p>　
+　原文名：25+ Alternative &amp; Open Source Database Engines</p>
+</div>
+<!-- wordend--><!-- 评论信息--></div>
+</div>
+</div>
+<p>
+
+</p>
+</div>
+<div class="share_buttons" id="sharePanel"></div>
+<!--192.168.1.236-->
+<div class="article_next_prev">
+    <li class="prev_article"><span>上一篇：</span><a href="/kk5595/article/details/6093385">SQL 替换函数</a></li>
+    <li class="next_article"><span>下一篇：</span><a href="/kk5595/article/details/6287728">jQuery(function(){  })    与   (function(){   })(jQuery)；  区别</a></li>
+</div>
+
+
+    
+</div>
+<div id="ad_cen"></div>
+<script type="text/javascript">
+    new Ad(4, 'ad_cen');
+</script>
+<div id="comment_title" class="panel_head">查看评论<a name="comments"></a></div>
+<div id="comment_list"></div>
+<div id="comment_bar"></div>
+<div id="comment_form"></div>
+<div class="announce">* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+<script type="text/javascript">
+    var fileName = '6115950';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js?v=1.6"></script>
+<div id="ad_bot"></div>
+<script type="text/javascript">
+    new Ad(5, 'ad_bot');
+</script>
+<div id="report_dialog"></div>
+
+<div id="d-top">
+<a href="#" onclick="javascript:document.body.scrollTop=0;document.documentElement.scrollTop=0;this.blur();return false;" title="回到顶部">
+<img src="http://static.blog.csdn.net/images/top.png" alt="TOP" /></a>
+</div>
+
+
+
+<div class="clear"></div>
+</div>
+</div>
+
+<div id="side">
+<div class="side">
+<div id="panel_Profile" class="panel">
+    <ul class="panel_head"><span>个人资料</span></ul>
+    <ul class="panel_body profile">
+        <div id="blog_userface">
+            <a href="http://my.csdn.net/kk5595" target="_blank">
+            <img src="http://avatar.csdn.net/6/F/A/1_kk5595.jpg" title="访问我的空间" style="max-width:90%"/>
+            </a>
+            <br />
+            <span><a href="http://my.csdn.net/kk5595" target="_blank">kk5595</a></span>
+        </div>
+<div class="interact">
+<!--<a href="#" class="attented" title="已关注"></a>-->
+<a href="#" class="attent" id="span_add_follow" title="[加关注]"></a>
+<a href="http://my.csdn.net/my/letter/send/kk5595" class="letter" title="[发私信]"></a>
+</div>
+        <div id="blog_medal">
+        </div>
+        <ul id="blog_rank">
+            <li>访问：<span>25978次</span></li>
+            <li>积分：<span>1156分</span></li>
+            <li>排名：<span>第7058名</span></li>
+        </ul>
+        <ul id="blog_statistics">
+            <li>原创：<span>90篇</span></li>
+            <li>转载：<span>10篇</span></li>
+            <li>译文：<span>1篇</span></li>
+            <li>评论：<span>19条</span></li>
+        </ul>
+    </ul>
+</div>
+<script type="text/javascript">
+    var _blogger = 'kk5595';
+</script>
+<script type='text/javascript'>
+$(document).ready(function () {
+    var un = getUN().toLowerCase();
+    if (un == _blogger.toLowerCase()) {
+        $('.interact').hide();
+    } else if(un) {
+        var url = "http://my.csdn.net/index.php/follow/check_is_followed/" + encodeURIComponent(un) + "/" + encodeURIComponent(_blogger) + "?jsonpcallback=?";
+        $.getJSON(url, {}, function (data) {
+            if (data.succ == 1 && data.info == 1) {
+                $('#span_add_follow').attr('class', 'attented');
+            } else {
+                $('#span_add_follow').click(guanzhu);
+            }
+        }, 'json');
+    }
+});
+function guanzhu() {
+    var url = "http://my.csdn.net/index.php/follow/do_follow?jsonpcallback=?";
+    $.getJSON(url, { "username": _blogger }, function (data) {
+        if (data.succ == 1) {
+            alert('关注成功！');
+            $('#span_add_follow').attr('class', 'attented').click(function () { return false; });
+        } else {
+            alert(data.msg);
+        }
+    });
+    return false;
+}
+function getUN() {
+    var m = document.cookie.match(new RegExp("(^| )UserName=([^;]*)(;|$)"));
+    if (m) return m[2];
+    else return '';
+}
+</script>
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="submit" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>文章分类</span></ul>
+    <ul class="panel_body">
+        <li>
+        <a href="http://blog.csdn.net/kk5595/article/category/723090">CSS</a><span>(0)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/kk5595/article/category/723089">javascript</a><span>(0)</span>
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/kk5595/article/category/723091">控件</a><span>(0)</span>
+        </li>
+    </ul>
+</div><div id="panel_Archive" class="panel">
+    <ul class="panel_head"><span>文章存档</span></ul>
+    <ul class="panel_body">
+        <div id="archive_list">
+        <!--归档统计-->
+        <li><a href="http://blog.csdn.net/kk5595/article/month/2011/11">2011年11月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2011/10">2011年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2011/06">2011年06月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2011/03">2011年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2011/01">2011年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/12">2010年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/09">2010年09月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/08">2010年08月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/07">2010年07月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/06">2010年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/05">2010年05月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/04">2010年04月</a><span>(20)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/03">2010年03月</a><span>(17)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/02">2010年02月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2010/01">2010年01月</a><span>(18)</span></li><li><a href="http://blog.csdn.net/kk5595/article/month/2009/12">2009年12月</a><span>(3)</span></li>
+        </div>
+    </ul>
+</div>
+<div id="hotarticls" class="panel">
+    <ul class="panel_head"><span>阅读排行</span></ul>
+    <ul class="panel_body itemlist">
+        <li>
+            <a href="/kk5595/article/details/5713209" title="document.ready和onload的区别——JavaScript文档加载完成事件">document.ready和onload的区别——JavaScript文档加载完成事件</a><span>(2655)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/6115950" title="你知道 facebook,sina,sohu都用的啥数据库吗？不知道的话请看本文章！（35个非主流的数据库）">你知道 facebook,sina,sohu都用的啥数据库吗？不知道的话请看本文章！（35个非主流的数据库）</a><span>(2629)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5075019" title="查询 某个字段存在于数据库中的哪些表中">查询 某个字段存在于数据库中的哪些表中</a><span>(2064)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5500206" title="jQuery 开发环境搭配 (DreamWeaver 和 VS2008 下面启动 智能感知)">jQuery 开发环境搭配 (DreamWeaver 和 VS2008 下面启动 智能感知)</a><span>(1985)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5383012" title="js 控制textbox的显示与隐藏">js 控制textbox的显示与隐藏</a><span>(1584)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5326891" title="局部刷新 与  点击按钮弹出窗口   （ajax 控件  updatepanel    ModalPopupExtender  ）">局部刷新 与  点击按钮弹出窗口   （ajax 控件  updatepanel    ModalPopupExtender  ）</a><span>(1021)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5881117" title="IE支持：id.style.display,火狐不支持">IE支持：id.style.display,火狐不支持</a><span>(670)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5480361" title="  C#后台执行JS ">  C#后台执行JS </a><span>(603)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5621888" title="js  通过 this 传 id">js  通过 this 传 id</a><span>(590)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5849874" title="針對 ie 和 Firefox，簡化 JavaScript 的 onKeyPress 判斷！ 分享">針對 ie 和 Firefox，簡化 JavaScript 的 onKeyPress 判斷！ 分享</a><span>(511)</span>
+        </li>
+    </ul>
+</div>
+<div id="hotarticls2" class="panel">
+    <ul class="panel_head"><span>评论排行</span></ul>
+    <ul class="panel_body itemlist">
+        <li>
+            <a href="/kk5595/article/details/6559438" title="WebRequest 模拟请求登录 终于搞定了！">WebRequest 模拟请求登录 终于搞定了！</a><span>(8)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5500206" title="jQuery 开发环境搭配 (DreamWeaver 和 VS2008 下面启动 智能感知)">jQuery 开发环境搭配 (DreamWeaver 和 VS2008 下面启动 智能感知)</a><span>(2)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5326891" title="局部刷新 与  点击按钮弹出窗口   （ajax 控件  updatepanel    ModalPopupExtender  ）">局部刷新 与  点击按钮弹出窗口   （ajax 控件  updatepanel    ModalPopupExtender  ）</a><span>(2)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5881117" title="IE支持：id.style.display,火狐不支持">IE支持：id.style.display,火狐不支持</a><span>(2)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5361062" title="dexpress  AspxMenu  控件  ">dexpress  AspxMenu  控件  </a><span>(2)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/6287728" title="jQuery(function(){  })    与   (function(){   })(jQuery)；  区别">jQuery(function(){  })    与   (function(){   })(jQuery)；  区别</a><span>(2)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5518837" title="javascript 正则">javascript 正则</a><span>(1)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5500275" title="C#-Home / 详解Asp.Net Sql数据库连接字符串 ">C#-Home / 详解Asp.Net Sql数据库连接字符串 </a><span>(0)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5515926" title="9 个基于JavaScript 和 CSS 的 Web 图表框架">9 个基于JavaScript 和 CSS 的 Web 图表框架</a><span>(0)</span>
+        </li>
+        <li>
+            <a href="/kk5595/article/details/5518482" title="javascript正则表达式的基本知识 ">javascript正则表达式的基本知识 </a><span>(0)</span>
+        </li>
+    </ul>
+</div>
+<div id="homepageArticles" class="panel">
+    <ul class="panel_head"><span>推荐文章</span></ul>
+    <ul class="panel_body" id="ad_commend">
+    </ul>
+</div>
+<script type="text/javascript">
+    new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+    <a href="/kk5595/article/details/5361062#comments">dexpress  AspxMenu  控件  </a>
+    <p style="margin:0px;">kk5595:
+@ZCS1988:去 这个控件的网站查看 英文文档。会有所有属性详解。
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/5361062#comments">dexpress  AspxMenu  控件  </a>
+    <p style="margin:0px;">ZCS1988:
+真谢谢你，我也遇到这个问题！请问你是怎么知道这个属性的呢？
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/5881117#comments">IE支持：id.style.display,火狐不支持</a>
+    <p style="margin:0px;">roro5119:
+同样的问题啊，你解决没啊？
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">liudaibin:
+楼主，我也也正在学习网页模拟登陆，源码是否能共享研究下，liudaibin@qq.com
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">jitiankeji1:
+源码共享下啊！　　最近也在研究这个！
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">lovehpz:
+搞定了谢谢
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">kk5595:
+哪个?
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">lovehpz:
+而且那页面是不同的另外的页面，有什么特别的作用吗》？
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">lovehpz:
+哦，谢谢，那“//开始抢之前要get页面”这个是什么意思？
+    </p>
+    </li>
+    <li>
+    <a href="/kk5595/article/details/6559438#comments">WebRequest 模拟请求登录 终于搞定了！</a>
+    <p style="margin:0px;">kk5595:
+postdata 是通过  监测工具得来的。火狐用 firebuy 可以 观察 每次与服务器交互，是...
+    </p>
+    </li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+</div>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/SyntaxHighlighter/shCore-src.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/article_code.js"></script>
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/scripts/show.js"></script>
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=568913"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+
+<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+
+<!--ad.csdn.net-->
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+
+
+
+</div>
+</body>
+</html>
