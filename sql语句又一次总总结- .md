@@ -7,7 +7,7 @@ insert into tname(id,uid) values(1,1784534);
 update tname set uid=1843534,name='admin' where id = 1;
 delete from tname where id=1;
 use dbname;--选中数据库
-desc tname;--查看数据表基本结构
+desc tname;--查看数据表基本结构 
 show databases;--查看所有数据库
 show tables;--查看该数据库下所有表
 show create table tname;--查看表的详细结构
